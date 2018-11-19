@@ -9,6 +9,7 @@
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "web": "cd packages/react-scripts && node bin/react-scripts.js start",
     "ios": "react-native run-ios",
+    "android": "react-native run-android",
     "test": "jest"
   },
   "dependencies": {
