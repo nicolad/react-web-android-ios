@@ -1,21 +1,12 @@
-import React, { Component } from 'react';
-import axios from 'axios';
-import List from './List';
+import React, { Fragment } from 'react';
+import ListUsers from './containers/ListUsers';
+import CreateUser from './containers/CreateUser';
 
-export default class App extends Component {
-  state = {
-    persons: []
-  }
+const App = () => (
+  <Fragment>
+    <ListUsers />
+    <CreateUser />
+  </Fragment>
+)
 
-  componentDidMount() {
-    axios.get(`https://jsonplaceholder.typicode.com/users`)
-      .then(res => {
-        const persons = res.data;
-        this.setState({ persons });
-      })
-  }
-
-  render() {
-    return <List data={this.state.persons} />
-  }
-}
+export default App;
