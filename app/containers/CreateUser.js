@@ -10,20 +10,15 @@ export default class CreateUser extends Component {
   }
 
   handleChange = event => {
-    const name = pathOr(event, ['event', 'target', 'value'])(event);
+    const name = pathOr(event, ['target', 'value'])(event);
     this.setState({ name });
   }
 
   handleSubmit = () => {
-    const user = {
-      name: this.state.name
-    };
+    const { name: user } = this.state;
 
     API.post('users', { user })
-      .then(res => {
-        console.log(res);
-        console.log(res.data);
-      })
+      .then(res => console.log(res.data));
   }
 
   render() {

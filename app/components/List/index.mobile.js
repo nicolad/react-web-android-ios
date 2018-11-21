@@ -9,7 +9,7 @@ const StyledText = styled.Text`
   color: grey;
 `
 
-export default class Input extends Component {
+export default class List extends Component {
   render() {
     const { data } = this.props;
     return (

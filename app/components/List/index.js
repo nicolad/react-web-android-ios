@@ -1,13 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class List extends Component {
-  render() {
-    return (
-      <ul>
-        { this.props.data.map(person => <li>{person.name}</li>)}
-      </ul>
-    );
-  }
-}
+const List = ({ data }) => (
+  <ul>
+    {data.map(person => <li>{person.name}</li>)}
+  </ul>
+);
 
 export default List;
