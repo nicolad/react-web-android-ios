@@ -1,9 +1,13 @@
 import React from 'react';
+import styled from 'styled-components';
+import styles from './styles';
 
-const Button = ({ title, onAction }) => (
-  <button onClick={onAction}>
+const Button = styled.button`${styles}`;
+
+const ButtonItem = ({ title, onAction }) => (
+  <Button onClick={onAction}>
     {title}
-  </button>
+  </Button>
 )
 
-export default Button;
+export default ButtonItem;

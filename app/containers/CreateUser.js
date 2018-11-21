@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import { pathOr } from 'ramda';
 import API from '../services/api'
 import Input from '../components/Input';
 import Button from '../components/Button';
@@ -9,12 +10,11 @@ export default class CreateUser extends Component {
   }
 
   handleChange = event => {
-    this.setState({ name: event.target.value });
+    const name = pathOr(event, ['event', 'target', 'value'])(event);
+    this.setState({ name });
   }
 
-  handleSubmit = event => {
-    event.preventDefault();
-
+  handleSubmit = () => {
     const user = {
       name: this.state.name
     };

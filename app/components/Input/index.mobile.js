@@ -1,34 +1,21 @@
-import React, { Component } from 'react';
-import { Text, TextInput, View } from 'react-native';
+import React from 'react';
+import { Text, TextInput } from 'react-native';
+import styled from 'styled-components/native'
+import styles from './styles';
 
-export default class Input extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {text: ''};
-  }
+const StyledView = styled.View`${styles}`;
 
-  onChange = text => {
-console.log('test', text)
-this.setState({text})
-  }
+const Input = ({ value, handleChange }) => (
+  <StyledView>
+    <TextInput
+      style={{ height: 40 }}
+      placeholder="Type here to translate!"
+      onChangeText={handleChange}
+    />
+    <Text style={{ padding: 10, fontSize: 42 }}>
+      {value}
+    </Text>
+  </StyledView>
+);
 
-  render() {
-    return (
-      <View style={{
-        flex: 1,
-        flexDirection: 'column',
-        justifyContent: 'center',
-        padding: 20,
-      }}>
-        <TextInput
-          style={{height: 40}}
-          placeholder="Type here to translate!"
-          onChangeText={this.onChange}
-        />
-        <Text style={{padding: 10, fontSize: 42}}>
-          {this.state.text.split(' ').map((word) => word && '🍕').join(' ')}
-        </Text>
-      </View>
-    );
-  }
-}
+export default Input;
