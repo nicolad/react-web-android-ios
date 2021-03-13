@@ -14,7 +14,7 @@
     "nuke": "rm -r node_modules; for d in packages/*/node_modules; do echo $d; rm -r $d; done"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "dotenv": "^6.1.0",
     "ramda": "^0.26.0",
     "react": "16.6.1",
